@@ -30,7 +30,3 @@ function changeModeButton() {
   }
   setMode();
 }
-
-var modeName = getCookie("mode");
-setMode();
-document.getElementById("modeButton").onclick = changeModeButton;
