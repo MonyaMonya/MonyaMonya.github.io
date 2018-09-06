@@ -1,63 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<style>
-body.night {
-    background-color: black;
-    color: #CCC;
-    font-family: Verdana;
-    font-size: 160%;
-}
-body.day  {
-    background-color: #CCC;
-    color: black;
-    font-family: Verdana;
-    font-size: 160%;
-}
-
-button.night {
-    background-color: #333;
-    border: none;
-    color: #CCC;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-    margin-top: 5px;
-    margin-right: 5px;
-    position:absolute;
-    top:0;
-    right:0;
-    width:40px;
-    height:40px;
-}
-
-button.day {
-    background-color: #999;
-    border: none;
-    color: black;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-    margin-top: 5px;
-    margin-right: 5px;
-    position:absolute;
-    top:0;
-    right:0;
-    width:40px;
-    height:40px;
-}
-</style>
-
+	
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+	
 <title>Monya Monya's Little Archive Site</title>
 </head>
 <body id="body" class="night">
 
-<button id="button" class="night" onclick="changeModeButton()">☀</button>
+<button id="modeButton" class="night" onclick="changeModeButton()"></button>
 
 <h1>Monya Monya</h1>
 <p style="font-size:80%">The eternal-work-in-progress page</p>
@@ -69,62 +20,9 @@ button.day {
     <td>About</td>
   </tr>
 </table>
-
-<script>
-var modeName = getCookie("mode");
-setMode();
-
-function setMode() {
-  if(modeName != "day")
-  {
-	modeName = "night";
-  }
-  document.getElementById("body").className = modeName;
-  if(modeName == "day")
-  {
-     var elem = document.getElementById("button");
-    elem.innerText = "☾";
-    elem.className = modeName;
-  }
-  else
-  {
-     var elem = document.getElementById("button");
-    elem.innerText = "☀";
-    elem.className = modeName;
-  }
-  setCookie("mode", modeName, 365);
-}
-
-function changeModeButton() {
-  if(modeName != "night")
-  {
-	modeName = "night";
-  }
-  else
-  {
-    modeName = "day";
-  }
-  setMode();
-}
-
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-    }
-    return "";
-}
-</script>
+	
+<script src="js/cookies.js></script>
+<script src="js/mode.js></script>
 
 </body>
 </html>
