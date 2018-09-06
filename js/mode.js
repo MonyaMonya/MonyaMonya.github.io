@@ -1,11 +1,14 @@
 var modeName = "";
 
-function setMode() {
+function setMode(transition) {
   if(modeName != "day")
   {
 	modeName = "night";
   }
-  document.getElementById("body").className = modeName;
+  if(transition)
+    document.getElementById("body").className = modeName;
+  else
+    document.getElementById("body").className = modeName + "-transitionless";
   if(modeName == "day")
   {
      var elem = document.getElementById("modeButton");
@@ -30,11 +33,11 @@ function changeModeButton() {
   {
     modeName = "day";
   }
-  setMode();
+  setMode(true);
 }
 
 function initModeButton() {
   modeName = getCookie("mode");
-  setMode();
+  setMode(false);
   document.getElementById("modeButton").onclick = changeModeButton;
 }
