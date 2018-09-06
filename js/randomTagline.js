@@ -17,7 +17,7 @@ var randomTaglines = [
   "Sleeping in oversized clothes",
   "Please stop",
   "I'm sorry I hurt you",
-  "Trickster and minuteman",
+  "The trickster and the minuteman",
   "Yesterday, today, tomorrow"
 ];
 
