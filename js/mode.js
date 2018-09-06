@@ -1,6 +1,3 @@
-var modeName = getCookie("mode");
-setMode();
-
 function setMode() {
   if(modeName != "day")
   {
@@ -33,3 +30,7 @@ function changeModeButton() {
   }
   setMode();
 }
+
+var modeName = getCookie("mode");
+setMode();
+document.getElementById("modeButton").onclick = "changeModeButton()";
