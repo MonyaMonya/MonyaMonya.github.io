@@ -1,22 +1,22 @@
-body.night {
+body.night,
+body.night-transitionless {
     background-color: black;
     color: #CCC;
     font-family: Verdana;
     font-size: 150%;
-        
-    -webkit-transition: background-color 1000ms, color 1000ms;
-    -moz-transition: background-color 1000ms, color 1000ms;
-    -o-transition: background-color 1000ms, color 1000ms;
-    -ms-transition: background-color 1000ms, color 1000ms;
-    transition: background-color 1000ms, color 1000ms;
 }
 
-body.day  {
+
+body.day,
+body.day-transitionless {
     background-color: #CCC;
     color: black;
     font-family: Verdana;
     font-size: 150%;
-        
+}
+
+body.night-transitionless,
+body.day-transitionless {
     -webkit-transition: background-color 1000ms, color 1000ms;
     -moz-transition: background-color 1000ms, color 1000ms;
     -o-transition: background-color 1000ms, color 1000ms;
@@ -24,10 +24,9 @@ body.day  {
     transition: background-color 1000ms, color 1000ms;
 }
 
-button.night {
-    background-color: #333;
+button.night,
+button.day {
     border: none;
-    color: #CCC;
     text-align: center;
     display: inline-block;
     font-size: 16px;
@@ -42,20 +41,12 @@ button.night {
     height:40px;
 }
 
+button.night {
+    background-color: #333;
+    color: #CCC;
+}
+
 button.day {
     background-color: #999;
-    border: none;
     color: black;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-    margin-top: 5px;
-    margin-right: 5px;
-    position:absolute;
-    top:0;
-    right:0;
-    width:40px;
-    height:40px;
 }
