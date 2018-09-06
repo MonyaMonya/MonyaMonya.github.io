@@ -8,6 +8,6 @@ document.write('\
 	\
     <h1>Monya Monya</h1>\
     <p style="font-size:80%" id="tagline"></p>\
-<script>document.getElementById("tagline").innerText = getRandomTagline();</script>';\
+<script>document.getElementById("tagline").innerText = getRandomTagline();</script>\
 \
 ');
