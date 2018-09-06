@@ -33,4 +33,4 @@ function changeModeButton() {
 
 var modeName = getCookie("mode");
 setMode();
-document.getElementById("modeButton").onclick = "changeModeButton()";
+document.getElementById("modeButton").onclick = changeModeButton;
