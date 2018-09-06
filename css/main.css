@@ -3,18 +3,12 @@ body.night {
     color: #CCC;
     font-family: Verdana;
     font-size: 150%;
-    
-    -webkit-transition: color 1000ms linear;
-    -moz-transition: color 1000ms linear;
-    -o-transition: color 1000ms linear;
-    -ms-transition: color 1000ms linear;
-    transition: color 1000ms linear;
-    
-    -webkit-transition: background-color 1000ms linear;
-    -moz-transition: background-color 1000ms linear;
-    -o-transition: background-color 1000ms linear;
-    -ms-transition: background-color 1000ms linear;
-    transition: background-color 1000ms linear;
+        
+    -webkit-transition: background-color 1000ms, color 1000ms;
+    -moz-transition: background-color 1000ms, color 1000ms;
+    -o-transition: background-color 1000ms, color 1000ms;
+    -ms-transition: background-color 1000ms, color 1000ms;
+    transition: background-color 1000ms, color 1000ms;
 }
 
 body.day  {
@@ -22,18 +16,12 @@ body.day  {
     color: black;
     font-family: Verdana;
     font-size: 150%;
-    
-    -webkit-transition: color 1000ms linear;
-    -moz-transition: color 1000ms linear;
-    -o-transition: color 1000ms linear;
-    -ms-transition: color 1000ms linear;
-    transition: color 1000ms linear;
-    
-    -webkit-transition: background-color 1000ms linear;
-    -moz-transition: background-color 1000ms linear;
-    -o-transition: background-color 1000ms linear;
-    -ms-transition: background-color 1000ms linear;
-    transition: background-color 1000ms linear;
+        
+    -webkit-transition: background-color 1000ms, color 1000ms;
+    -moz-transition: background-color 1000ms, color 1000ms;
+    -o-transition: background-color 1000ms, color 1000ms;
+    -ms-transition: background-color 1000ms, color 1000ms;
+    transition: background-color 1000ms, color 1000ms;
 }
 
 button.night {
