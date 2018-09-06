@@ -15,8 +15,8 @@ body.day-transitionless {
     font-size: 150%;
 }
 
-body.night-transitionless,
-body.day-transitionless {
+body.night,
+body.day {
     -webkit-transition: background-color 1000ms, color 1000ms;
     -moz-transition: background-color 1000ms, color 1000ms;
     -o-transition: background-color 1000ms, color 1000ms;
