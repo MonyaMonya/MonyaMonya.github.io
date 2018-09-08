@@ -7,7 +7,7 @@ function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCoun
   var currentFrame = 0;
   
   var stop = false;
-  var fps, fpsInterval, startTime, now, then, elapsed;
+  var startTime, now, then, elapsed;
   
   var myImage = new Image();
 
@@ -21,10 +21,10 @@ function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCoun
     elapsed = now - then;
 
     // if enough time has elapsed, draw the next frame
-    if (elapsed > fpsInterval) {
+    if (elapsed > frameInterval) {
       // Get ready for next frame by setting then=now, but also adjust for your
       // specified fpsInterval not being a multiple of RAF's interval (16.7ms)
-      then = now - (elapsed % fpsInterval);
+      then = now - (elapsed % frameInterval);
 
       // Put your drawing code here
       /// this composite mode clears the canvas as well
@@ -50,7 +50,6 @@ function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCoun
   }
   
   function startAnimate() {
-    fpsInterval = 1000 / fps;
     then = Date.now();
     startTime = then;
     animate();
