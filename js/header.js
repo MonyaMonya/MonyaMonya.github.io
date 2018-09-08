@@ -7,7 +7,7 @@ document.write('\
     <button id="modeButton" class="night"></button>\
     <script>initModeButton();</script>\
 	\
-    <h1>Monya Monya</h1>\
+    <h1 style="margin-top: 0px;">Monya Monya</h1>\
     <p style="font-size:80%" id="tagline"></p>\
 <script>document.getElementById("tagline").innerText = getRandomTagline();</script>\
 \
