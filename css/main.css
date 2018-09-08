@@ -53,6 +53,6 @@ button.day {
 
 canvas.footer {
     position: absolute;
-    width: auto;
+    margin: auto;
     left: 0; bottom: 0; right: 0;
 }
