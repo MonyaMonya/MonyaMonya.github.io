@@ -1,5 +1,5 @@
 function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCount, frameInterval, color) {
-  var canvas = document.querySelector("canvasName");
+  var canvas = document.querySelector(canvasName);
   var context = canvas.getContext("2d");
 
   var myImage = new Image();
