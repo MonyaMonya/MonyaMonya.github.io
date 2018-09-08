@@ -6,7 +6,7 @@ function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCoun
   canvas.width = frameWidth;
   canvas.height = frameHeight;
   canvas.className = "footer";
-  context.fillStyle = '#00c';
+  context.fillStyle = color;
   //context.goalColor = color;
 
   var shift = 0;
