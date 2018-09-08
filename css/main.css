@@ -52,8 +52,7 @@ button.day {
 }
 
 canvas.footer {
-    margin: auto;
     position: absolute;
-    left: 0; bottom: 0; right: 0;
     width: auto;
+    left: 0; bottom: 0; right: 0;
 }
