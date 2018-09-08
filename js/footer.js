@@ -1,5 +1,5 @@
 document.write('\
-<canvas id="footerCanvas" width=400 height=200></canvas>\
+<canvas id="footerCanvas"></canvas>\
 \
 ');
 
