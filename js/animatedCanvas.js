@@ -31,7 +31,7 @@ function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCoun
     
     shift += frameWidth + 1;
 
-    if (currentFrame == totalFrames) {
+    if (currentFrame == frameCount) {
       shift = 0;
       currentFrame = 0;
     }
