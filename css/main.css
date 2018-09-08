@@ -50,3 +50,9 @@ button.day {
     background-color: #999;
     color: black;
 }
+
+canvas.footer {
+    margin: auto;
+    position: absolute;
+    left: 0; bottom: 0; right: 0;
+}
