@@ -62,6 +62,6 @@ function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCoun
   myImage.addEventListener("load", loadImage, false);
   myImage.src = image;
   
-  myImage.fillStyle = color;
-  myImage.goalColor = color;
+  context.fillStyle = color;
+  context.goalColor = color;
 }
