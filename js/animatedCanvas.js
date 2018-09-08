@@ -2,6 +2,9 @@ function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCoun
   
   var canvas = document.getElementById(canvasName);
   var context = canvas.getContext("2d");
+  
+  context.fillStyle = '#00c';
+  //context.goalColor = color;
 
   var shift = 0;
   var currentFrame = 0;
@@ -61,7 +64,4 @@ function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCoun
 
   myImage.addEventListener("load", loadImage, false);
   myImage.src = image;
-  
-  context.fillStyle = color;
-  context.goalColor = color;
 }
