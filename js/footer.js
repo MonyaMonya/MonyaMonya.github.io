@@ -5,7 +5,7 @@ document.write('\
 </div><!-- #footer -->\
 \
 <script src="js/animatedCanvas.js"></script>\
-<script>setAnimatedCanvas("footerCanvas", "content/stepladderfull.gif", 1183, 577, 3, 200, "#CCC");</script>\
+<script>setAnimatedCanvas("footerCanvas", "content/stepladderfull.gif", 1183, 577, 3, 200, "#787878");</script>\
 \
 ');
 
