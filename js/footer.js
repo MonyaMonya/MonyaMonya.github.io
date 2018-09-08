@@ -1,5 +1,7 @@
 document.write('\
 <script src="js/animatedCanvas.js"></script>\
+<script src="js/animatedCanvas.js"></script>\
+<script src="js/cookies.js"></script>\
 <canvas id="footerCanvas"></canvas>\
 \
 ');
