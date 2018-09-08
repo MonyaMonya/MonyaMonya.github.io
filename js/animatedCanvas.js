@@ -36,7 +36,7 @@ function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCoun
 
       /// this mode fills in whatever, in the image
       context.globalCompositeOperation = 'source-in';
-      context.fillRect(0, 0, canvas.width, canvas.height);
+      context.fillRect(0, 0, frameWidth, frameHeight);
 
       shift += frameWidth + 1;
 
