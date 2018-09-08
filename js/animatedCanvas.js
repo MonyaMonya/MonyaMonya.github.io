@@ -1,20 +1,12 @@
 function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCount, frameInterval, color) {
+  
   var canvas = document.getElementById(canvasName);
   var context = canvas.getContext("2d");
 
-  var myImage = new Image();
-  myImage.addEventListener("load", loadImage, false);
-  myImage.src = image;
-
-  myImage.goalColor = color;
-  myImage.fillStyle = color;
-
-  function loadImage(e) {
-    animate();
-  }
-
   var shift = 0;
   var currentFrame = 0;
+  
+  var myImage = new Image();
 
   function animate() {
   
@@ -40,4 +32,14 @@ function setAnimatedCanvas(canvasName, image, frameWidth, frameHeight, frameCoun
 
     requestAnimationFrame(animate);
   }
+  
+  function loadImage(e) {
+    animate();
+  }
+
+  myImage.addEventListener("load", loadImage, false);
+  myImage.src = image;
+  
+  //myImage.goalColor = color;
+  //myImage.fillStyle = color;
 }
