@@ -115,7 +115,8 @@ function initModeButton() {
 }
 
 function initTextUpButton() {
-  textSize = parseInt(getCookie("textSize"));
+  var tS = getCookie("textSize");
+  textSize = parseInt(tS);
   setTextSize();
   var elem = document.getElementById("textUpButton");
   elem.style.top = "0px";
