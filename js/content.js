@@ -77,11 +77,11 @@ function addStoryNavigationBar(story, chapter, page) {
            <tbody>\
              <tr>\
                <td style="width:15%"></td>\
-               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + (chapter - 1) + ',' + page + ');"><<</p>' + '</td>\
-               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + chapter + ',' + (page - 1) + ');"><</p>' + '</td>\
+               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + (parseInt(chapter) - 1) + ',' + page + ');"><<</p>' + '</td>\
+               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + chapter + ',' + (parseInt(page) - 1) + ');"><</p>' + '</td>\
                <td style="width:15%"></td>\
-               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + chapter + ',' + (page + 1) + ');">></p>' + '</td>\
-               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + (chapter + 1) + ',' + page + ');">>></p>' + '</td>\
+               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + chapter + ',' + (parseInt(page) + 1) + ');">></p>' + '</td>\
+               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + (parseInt(chapter) + 1) + ',' + page + ');">>></p>' + '</td>\
                <td style="width:15%"></td>\
              </tr>\
            </tbody>\
