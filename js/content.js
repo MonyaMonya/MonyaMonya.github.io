@@ -17,11 +17,7 @@ function UpdateContent() {
       var chapter = getURLParameter('c');
       var page = getURLParameter('n');
       
-      async loadScript = () => {
-         innerHtml = await GetScript(story, chapter, page);
-           var elem = document.getElementById("content");
-           elem.innerHTML = innerHtml;
-      }
+      GetScript(story, chapter, page);
       
       return;
    }
@@ -35,11 +31,15 @@ async function GetScript(story, chapter, page) {
    var nonUnit = "stories/" + story + "/" + chapter + "-" + page + ".js";
    var unit = "stories/" + story + "/" + chapter + "-" + page + "-" + unitsName + ".js";
    
+   var str = '';
+   
    if(checkIfFileExists(nonUnit))
-      return readTextFile(nonUnit);
+      str = readTextFile(nonUnit);
    if(checkIfFileExists(unit))
-      return readTextFile(unit);
-   return '';
+      str = readTextFile(unit);
+   
+     var elem = document.getElementById("content");
+     elem.innerHTML = str;
 }
 
 function GoToPage(pageName) {
