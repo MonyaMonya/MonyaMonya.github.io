@@ -17,7 +17,7 @@ function UpdateContent() {
       var chapter = getURLParameter('c');
       var page = getURLParameter('n');
       
-      async = loadScript => {
+      async loadScript = () => {
          innerHtml = await GetScript(story, chapter, page);
            var elem = document.getElementById("content");
            elem.innerHTML = innerHtml;
