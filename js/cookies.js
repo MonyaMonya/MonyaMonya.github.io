@@ -10,8 +10,9 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 function getCookie(cname) {
-   return document.cookie.replace("/(?:(?:^|.*;\s*)" + cname + "\s*\=\s*([^;]*).*$)|^.*$/", "$1");
-   
+   //return document.cookie.replace("/(?:(?:^|.*;\s*)" + cname + "\s*\=\s*([^;]*).*$)|^.*$/", "$1");
+   var b = document.cookie.match('(^|;)\\s*' + cname + '\\s*=\\s*([^;]+)');
+    return b ? b.pop() : '';
     //var name = cname + "=";
     //var ca = document.cookie.split(';');
     //for(var i=0; i<ca.length; i++) {
