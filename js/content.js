@@ -33,10 +33,10 @@ async function GetScript(story, chapter, page) {
    
    var str = '';
    
-   if(checkIfFileExists(nonUnit))
-      str = readTextFile(nonUnit);
-   if(checkIfFileExists(unit))
-      str = readTextFile(unit);
+   if(await checkIfFileExists(nonUnit))
+      str = await readTextFile(nonUnit);
+   if(await checkIfFileExists(unit))
+      str = await readTextFile(unit);
    
      var elem = document.getElementById("content");
      elem.innerHTML = str;
