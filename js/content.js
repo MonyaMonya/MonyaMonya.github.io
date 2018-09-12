@@ -71,17 +71,17 @@ function loadListings() {
    return html;
 }
 
-function addStoryNavigationBar() {
+function addStoryNavigationBar(story, chapter, page) {
    return '\
          <table style="width:100%; text-align:center">\
            <tbody>\
              <tr>\
                <td style="width:15%"></td>\
-               <td><<</td>\
-               <td><</td>\
+               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + (chapter - 1) + ',' + page + ');"><<</p>' + '</td>\
+               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + chapter + ',' + (page - 1) + ');"><</p>' + '</td>\
                <td style="width:15%"></td>\
-               <td>></td>\
-               <td>>></td>\
+               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + chapter + ',' + (page + 1) + ');">></p>' + '</td>\
+               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + (chapter + 1) + ',' + page + ');">>></p>' + '</td>\
                <td style="width:15%"></td>\
              </tr>\
            </tbody>\
