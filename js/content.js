@@ -25,15 +25,15 @@ function UpdateContent() {
   elem.innerHTML = innerHtml;
 }
 
-function GetScript(story, chapter, page) {
+async function GetScript(story, chapter, page) {
    //Haha, check how lazy I am
    var nonUnit = "stories/" + story + "/" + chapter + "-" + page + ".js";
    var unit = "stories/" + story + "/" + chapter + "-" + page + "-" + unitsName + ".js";
    
-   if(checkIfFileExists(nonUnit))
-      return readTextFile(nonUnit);
-   if(checkIfFileExists(unit))
-      return readTextFile(unit);
+   if(await checkIfFileExists(nonUnit))
+      return await readTextFile(nonUnit);
+   if(await checkIfFileExists(unit))
+      return await readTextFile(unit);
    return '';
 }
 
