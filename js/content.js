@@ -16,7 +16,12 @@ function UpdateContent() {
       var story = getURLParameter('s');
       var chapter = getURLParameter('c');
       var page = getURLParameter('n');
-      innerHtml = GetScript(story, chapter, page);
+      
+      async = loadScript => {
+         innerHtml = await GetScript(story, chapter, page);
+           var elem = document.getElementById("content");
+           elem.innerHTML = innerHtml;
+      }
       
       return;
    }
@@ -30,10 +35,10 @@ async function GetScript(story, chapter, page) {
    var nonUnit = "stories/" + story + "/" + chapter + "-" + page + ".js";
    var unit = "stories/" + story + "/" + chapter + "-" + page + "-" + unitsName + ".js";
    
-   if(await checkIfFileExists(nonUnit))
-      return await readTextFile(nonUnit);
-   if(await checkIfFileExists(unit))
-      return await readTextFile(unit);
+   if(checkIfFileExists(nonUnit))
+      return readTextFile(nonUnit);
+   if(checkIfFileExists(unit))
+      return readTextFile(unit);
    return '';
 }
 
