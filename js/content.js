@@ -16,7 +16,7 @@ function UpdateContent() {
       var story = getURLParameter('s');
       var chapter = getURLParameter('c');
       var page = getURLParameter('n');
-      //innerHtml = GetScript(story, chapter, page);
+      innerHtml = GetScript(story, chapter, page);
       
       return;
    }
@@ -27,7 +27,14 @@ function UpdateContent() {
 
 function GetScript(story, chapter, page) {
    //Haha, check how lazy I am
-   return '<script src="stories/' + story + '/' + chapter + '-' + page + '.js"></script><script src="stories/' + story + '/' + chapter + '-' + page + '-' + unitsName + '.js"></script>'
+   var nonUnit = "stories/" + story + "/" + chapter + "-" + page + ".js";
+   var unit = "stories/" + story + "/" + chapter + "-" + page + "-" + unitsName + ".js";
+   
+   if(checkIfFileExists(nonUnit))
+      return readTextFile(nonUnit);
+   if(checkIfFileExists(unit))
+      return readTextFile(unit);
+   return '';
 }
 
 function GoToPage(pageName) {
