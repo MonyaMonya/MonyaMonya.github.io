@@ -39,9 +39,9 @@ async function GetScript(story, chapter, page) {
       str = await readTextFile(unit);
    
      var elem = document.getElementById("content");
-     elem.innerHTML = addStoryNavigationBar();
+     elem.innerHTML = addStoryNavigationBar(story, chapter, page);
      elem.innerHTML += str;
-     elem.innerHTML += addStoryNavigationBar();
+     elem.innerHTML += addStoryNavigationBar(story, chapter, page);
 }
 
 function GoToPage(pageName) {
