@@ -34,13 +34,12 @@ function get(url) {
 
 
 function readTextFile(fileLocation) {
-   get(fileLocation).then(function(response) {
-      console.Log("Success!");
-      return response.responseText;
-   }, function(error) {
-      console.Log("Error!");
-      return "";
-   });
+  try {
+    let response = await get(fileLocation);
+    return response.responseText;
+  } catch (err) {
+    return "";
+  }
   
   
   //var rawFile = new XMLHttpRequest();
@@ -57,11 +56,10 @@ function readTextFile(fileLocation) {
 
 function checkIfFileExists(fileLocation) {
    //This is very bad for large files. Needs to be optimized!
-   get(fileLocation).then(function(response) {
-      //console.Log("Success!");
-      return true;
-   }, function(error) {
-      //console.Log("Error!");
-      return false;
-   });
+  try {
+    let response = await get(fileLocation);
+    return true;
+  } catch (err) {
+    return false;
+  }
 }
