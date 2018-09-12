@@ -58,10 +58,10 @@ function readTextFile(fileLocation) {
 function checkIfFileExists(fileLocation) {
    //This is very bad for large files. Needs to be optimized!
    get(fileLocation).then(function(response) {
-      console.Log("Success!");
+      //console.Log("Success!");
       return true;
    }, function(error) {
-      console.Log("Error!");
+      //console.Log("Error!");
       return false;
    });
 }
