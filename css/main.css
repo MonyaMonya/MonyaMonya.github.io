@@ -3,10 +3,13 @@ body {
     margin:0;
     padding:0;
     height:100%;
+    font-family: Verdana;
+    font-size: 150%;
 }
 #wrapper {
     min-height:100%;
     position:relative;
+    z-index: 1;
 }
 #header {
     padding:10px;
@@ -19,14 +22,17 @@ body {
     position:absolute;
     bottom:0;
     left:0;
+    z-index: -1;
+}
+
+.clickable {
+   cursor: pointer;
 }
 
 body.night,
 body.night-transitionless {
     background-color: black;
     color: #CCC;
-    font-family: Verdana;
-    font-size: 150%;
 }
 
 
@@ -34,8 +40,6 @@ body.day,
 body.day-transitionless {
     background-color: #CCC;
     color: black;
-    font-family: Verdana;
-    font-size: 150%;
 }
 
 body.night,
@@ -58,8 +62,6 @@ button.day {
     margin-top: 5px;
     margin-right: 5px;
     position:absolute;
-    top:0;
-    right:0;
     width:40px;
     height:40px;
 }
