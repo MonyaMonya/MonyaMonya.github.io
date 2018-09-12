@@ -41,7 +41,8 @@ function readTextFile(fileLocation) {
       console.Log("Error!");
       return "";
    });
-}
+  
+  
   //var rawFile = new XMLHttpRequest();
   //rawFile.open("GET", fileLocation, true);
   //rawFile.onreadystatechange = function() {
