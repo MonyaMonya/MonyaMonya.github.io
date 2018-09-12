@@ -39,7 +39,9 @@ async function GetScript(story, chapter, page) {
       str = await readTextFile(unit);
    
      var elem = document.getElementById("content");
-     elem.innerHTML = str;
+     elem.innerHTML = addStoryNavigationBar();
+     elem.innerHTML += str;
+     elem.innerHTML += addStoryNavigationBar();
 }
 
 function GoToPage(pageName) {
@@ -67,4 +69,22 @@ function loadListings() {
    
    }
    return html;
+}
+
+function addStoryNavigationBar() {
+   return '\
+         <table style="width:100%; text-align:center">\
+           <tbody>\
+             <tr>\
+               <td style="width:15%"></td>\
+               <td><<</td>\
+               <td><</td>\
+               <td style="width:15%"></td>\
+               <td>></td>\
+               <td>>></td>\
+               <td style="width:15%"></td>\
+             </tr>\
+           </tbody>\
+         </table>\
+         ';
 }
