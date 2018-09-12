@@ -4,6 +4,7 @@ document.write('\
     <script src="js/randomTagline.js"></script>\
     <script src="stories/listings.js"></script>\
     <script src="js/content.js"></script>\
+    <script src="js/textLoader.js"></script>\
 	  \
       <div id="header">\
     <button id="modeButton" class="night"></button>\
@@ -13,7 +14,7 @@ document.write('\
     <script>initModeButton();</script>\
     <script>initTextUpButton();</script>\
     <script>initTextDownButton();</script>\
-    <script>initUnitsButton();</script>\
+    <script>initUnitsButton(); checkIfFileExists("js/textLoader.js"); checkIfFileExists("js/textLssoader.js");</script>\
 	\
     <h1 style="margin-top: 0px;">Monya Monya</h1>\
     <p style="font-size:80%" id="tagline"></p>\

@@ -16,7 +16,9 @@ function UpdateContent() {
       var story = getURLParameter('s');
       var chapter = getURLParameter('c');
       var page = getURLParameter('n');
-      innerHtml = GetScript(story, chapter, page);
+      //innerHtml = GetScript(story, chapter, page);
+      
+      return;
    }
    
   var elem = document.getElementById("content");
