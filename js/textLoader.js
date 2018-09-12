@@ -33,7 +33,7 @@ function get(url) {
 
 
 
-function readTextFile(fileLocation) {
+async function readTextFile(fileLocation) {
   try {
     let response = await get(fileLocation);
     return response.responseText;
@@ -54,7 +54,7 @@ function readTextFile(fileLocation) {
 }
 
 
-function checkIfFileExists(fileLocation) {
+async function checkIfFileExists(fileLocation) {
    //This is very bad for large files. Needs to be optimized!
   try {
     let response = await get(fileLocation);
