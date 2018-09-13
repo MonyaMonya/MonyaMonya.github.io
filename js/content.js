@@ -26,7 +26,7 @@ function UpdateContent() {
   elem.innerHTML = innerHtml;
 }
 
-function CheckIfScriptExists(story, chapter, page) {
+async function CheckIfScriptExists(story, chapter, page) {
  var nonUnit = "stories/" + story + "/" + chapter + "-" + page + ".js";
  var unit = "stories/" + story + "/" + chapter + "-" + page + "-" + unitsName + ".js";
    
@@ -38,7 +38,7 @@ function CheckIfScriptExists(story, chapter, page) {
  return "";
 }
 
-async function GetScript(story, chapter, page) {
+function GetScript(story, chapter, page) {
    var scriptName = CheckIfScriptExists(story, chapter, page);
    
    if(scriptName == "") {
