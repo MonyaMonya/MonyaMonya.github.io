@@ -39,7 +39,7 @@ async function CheckIfScriptExists(story, chapter, page) {
 }
 
 async function GetScript(story, chapter, page) {
-   var scriptName = CheckIfScriptExists(story, chapter, page);
+   var scriptName = await CheckIfScriptExists(story, chapter, page);
    
    if(scriptName == "") {
       var elem = document.getElementById("content");
@@ -106,7 +106,7 @@ function addStoryNavigationBar(story, chapter, page) {
 }
 
 function addStoryNavigationPBlock(story, chapter, page) { 
-  if(CheckIfScriptExists(story, chapter, page) != "")
+  if(await CheckIfScriptExists(story, chapter, page) != "")
     return '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + chapter + ',' + page + ');">';
   else
     return '<p class="unclickable">';
