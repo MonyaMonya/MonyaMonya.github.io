@@ -105,7 +105,7 @@ function addStoryNavigationBar(story, chapter, page) {
          ';
 }
 
-function addStoryNavigationPBlock(story, chapter, page) { 
+async function addStoryNavigationPBlock(story, chapter, page) { 
   if(await CheckIfScriptExists(story, chapter, page) != "")
     return '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + chapter + ',' + page + ');">';
   else
