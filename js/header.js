@@ -14,7 +14,7 @@ document.write('\
     <script>initModeButton();</script>\
     <script>initTextUpButton();</script>\
     <script>initTextDownButton();</script>\
-    <script>initUnitsButton(); checkIfFileExists("js/textLoader.js"); checkIfFileExists("js/textLssoader.js");</script>\
+    <script>initUnitsButton();</script>\
 	\
     <h1 style="margin-top: 0px;">Monya Monya</h1>\
     <p style="font-size:80%" id="tagline"></p>\
