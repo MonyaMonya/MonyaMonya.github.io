@@ -38,6 +38,10 @@ body {
    cursor: pointer;
 }
 
+.unclickable {
+   cursor: default;
+}
+
 body.night,
 body.night-transitionless {
     background-color: black;
