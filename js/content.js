@@ -38,7 +38,7 @@ async function CheckIfScriptExists(story, chapter, page) {
  return "";
 }
 
-function GetScript(story, chapter, page) {
+async function GetScript(story, chapter, page) {
    var scriptName = CheckIfScriptExists(story, chapter, page);
    
    if(scriptName == "") {
