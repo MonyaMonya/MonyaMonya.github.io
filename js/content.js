@@ -26,22 +26,33 @@ function UpdateContent() {
   elem.innerHTML = innerHtml;
 }
 
+function CheckIfScriptExists(story, chapter, page) {
+ var nonUnit = "stories/" + story + "/" + chapter + "-" + page + ".js";
+ var unit = "stories/" + story + "/" + chapter + "-" + page + "-" + unitsName + ".js";
+   
+ if(await checkIfFileExists(nonUnit))
+      return nonUnit;
+ if(await checkIfFileExists(unit))
+      return unit;
+   
+ return "";
+}
+
 async function GetScript(story, chapter, page) {
-   //Haha, check how lazy I am
-   var nonUnit = "stories/" + story + "/" + chapter + "-" + page + ".js";
-   var unit = "stories/" + story + "/" + chapter + "-" + page + "-" + unitsName + ".js";
+   var scriptName = CheckIfScriptExists(story, chapter, page);
    
-   var str = '';
+   if(scriptName == "") {
+      var elem = document.getElementById("content");
+      elem.innerHTML = "Error: Could not find story page requested.";
+   }
+   else {
+      var str = await readTextFile(scriptName);
    
-   if(await checkIfFileExists(nonUnit))
-      str = await readTextFile(nonUnit);
-   if(await checkIfFileExists(unit))
-      str = await readTextFile(unit);
-   
-     var elem = document.getElementById("content");
-     elem.innerHTML = addStoryNavigationBar(story, chapter, page);
-     elem.innerHTML += str;
-     elem.innerHTML += addStoryNavigationBar(story, chapter, page);
+       var elem = document.getElementById("content");
+       elem.innerHTML = addStoryNavigationBar(story, chapter, page);
+       elem.innerHTML += str;
+       elem.innerHTML += addStoryNavigationBar(story, chapter, page);
+   }
 }
 
 function GoToPage(pageName) {
@@ -72,21 +83,33 @@ function loadListings() {
 }
 
 function addStoryNavigationBar(story, chapter, page) {
+   var prevChapExists = (CheckIfScriptExists(story, parseInt(chapter) - 1, page) != "");
+   var prevPageExists = (CheckIfScriptExists(story, chapter, parseInt(page) - 1) != "");
+   var nextPageExists = (CheckIfScriptExists(story, chapter, parseInt(page) + 1) != "");
+   var nextChapExists = (CheckIfScriptExists(story, parseInt(chapter) + 1, page) != "");
+   
    return '\
          <table style="width:100%; text-align:center">\
            <tbody>\
              <tr>\
                <td style="width:15%"></td>\
-               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + (parseInt(chapter) - 1) + ',' + page + ');"><<</p>' + '</td>\
-               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + chapter + ',' + (parseInt(page) - 1) + ');"><</p>' + '</td>\
+               <td>' + addStoryNavigationPBlock(story, (parseInt(chapter) - 1), page) + '<<</p>' + '</td>\
+               <td>' + addStoryNavigationPBlock(story, chapter, (parseInt(page) - 1)) + '<</p>' + '</td>\
                <td style="width:15%"></td>\
-               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + chapter + ',' + (parseInt(page) + 1) + ');">></p>' + '</td>\
-               <td>' + '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + (parseInt(chapter) + 1) + ',' + page + ');">>></p>' + '</td>\
+               <td>' + addStoryNavigationPBlock(story, chapter, (parseInt(page) + 1)) + '></p>' + '</td>\
+               <td>' + addStoryNavigationPBlock(story, (parseInt(chapter) + 1), page) + '>></p>' + '</td>\
                <td style="width:15%"></td>\
              </tr>\
            </tbody>\
          </table>\
          ';
+}
+
+function addStoryNavigationPBlock(story, chapter, page) { 
+  if(CheckIfScriptExists(story, chapter, page) != "")
+    return '<p class="clickable" onclick="GoToStoryPage(\'' + story + '\',' + chapter + ',' + page + ');">';
+  else
+    return '<p class="unclickable">';
 }
 
 window.onpopstate = function(event) {
