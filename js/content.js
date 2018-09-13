@@ -49,9 +49,11 @@ async function GetScript(story, chapter, page) {
       var str = await readTextFile(scriptName);
    
        var elem = document.getElementById("content");
-       elem.innerHTML = addStoryNavigationBar(story, chapter, page);
+       var navigBar = await addStoryNavigationBar(story, chapter, page);
+      
+       elem.innerHTML = navigBar;
        elem.innerHTML += str;
-       elem.innerHTML += addStoryNavigationBar(story, chapter, page);
+       elem.innerHTML += navigBar;
    }
 }
 
@@ -82,22 +84,17 @@ function loadListings() {
    return html;
 }
 
-function addStoryNavigationBar(story, chapter, page) {
-   var prevChapExists = (CheckIfScriptExists(story, parseInt(chapter) - 1, page) != "");
-   var prevPageExists = (CheckIfScriptExists(story, chapter, parseInt(page) - 1) != "");
-   var nextPageExists = (CheckIfScriptExists(story, chapter, parseInt(page) + 1) != "");
-   var nextChapExists = (CheckIfScriptExists(story, parseInt(chapter) + 1, page) != "");
-   
+async function addStoryNavigationBar(story, chapter, page) {
    return '\
          <table style="width:100%; text-align:center">\
            <tbody>\
              <tr>\
                <td style="width:15%"></td>\
-               <td>' + addStoryNavigationPBlock(story, (parseInt(chapter) - 1), page) + '<<</p>' + '</td>\
-               <td>' + addStoryNavigationPBlock(story, chapter, (parseInt(page) - 1)) + '<</p>' + '</td>\
+               <td>' + await addStoryNavigationPBlock(story, (parseInt(chapter) - 1), page) + '<<</p>' + '</td>\
+               <td>' + await addStoryNavigationPBlock(story, chapter, (parseInt(page) - 1)) + '<</p>' + '</td>\
                <td style="width:15%"></td>\
-               <td>' + addStoryNavigationPBlock(story, chapter, (parseInt(page) + 1)) + '></p>' + '</td>\
-               <td>' + addStoryNavigationPBlock(story, (parseInt(chapter) + 1), page) + '>></p>' + '</td>\
+               <td>' + await addStoryNavigationPBlock(story, chapter, (parseInt(page) + 1)) + '></p>' + '</td>\
+               <td>' + await addStoryNavigationPBlock(story, (parseInt(chapter) + 1), page) + '>></p>' + '</td>\
                <td style="width:15%"></td>\
              </tr>\
            </tbody>\
