@@ -112,3 +112,11 @@ async function addStoryNavigationPBlock(story, chapter, page) {
 window.onpopstate = function(event) {
  UpdateContent();  
 }
+
+function UpdateStoryPage() {
+   
+   var pageName = getURLParameter('p');
+   
+   if(pageName == "page")
+      UpdateContent();
+}
