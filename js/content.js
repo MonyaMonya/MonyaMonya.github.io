@@ -88,3 +88,7 @@ function addStoryNavigationBar(story, chapter, page) {
          </table>\
          ';
 }
+
+window.onpopstate = function(event) {
+ UpdateContent();  
+}
