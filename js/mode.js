@@ -91,6 +91,7 @@ function changeUnitsButton() {
     unitsName = "cm";
   }
   setUnits(true);
+  UpdateStoryPage();
 }
 
 function changeModeButton() {
