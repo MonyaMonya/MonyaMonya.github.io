@@ -27,8 +27,8 @@ function UpdateContent() {
 }
 
 async function CheckIfScriptExists(story, chapter, page) {
- var nonUnit = "stories/" + story + "/" + chapter + "-" + page + ".js";
- var unit = "stories/" + story + "/" + chapter + "-" + page + "-" + unitsName + ".js";
+ var nonUnit = "stories/" + story + "/" + chapter + "-" + page + ".txt";
+ var unit = "stories/" + story + "/" + chapter + "-" + page + "-" + unitsName + ".txt";
    
  if(await checkIfFileExists(nonUnit))
       return nonUnit;
