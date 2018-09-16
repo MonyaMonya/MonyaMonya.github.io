@@ -89,6 +89,14 @@ button.day {
     color: black;
 }
 
+button.left {
+    border-radius: 12px 0px 0px 12px;
+}
+
+button.right {
+    border-radius: 0px 12px 12px 0px;
+}
+
 canvas.footer {
     margin: 0px auto 0px;
     bottom: 0;
