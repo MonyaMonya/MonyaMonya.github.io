@@ -105,4 +105,9 @@ canvas.footer {
     /*position:absolute;*/
 }
 
+.horizontalJustify {
+  display: flex;
+  justify-content: center;
+}
+
 a { display: block; }
