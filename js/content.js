@@ -80,7 +80,7 @@ function loadListings() {
    
    for (var i = 0; i < listingsTable.length; i++) {
      html += '<td><p class="clickable" onclick="GoToStoryPage(\'' + listingsTable[i][1] + '\',1,1);" id="storyName' + i + '">' + listingsTable[i][0] + "</p></td>";
-     if(listingsTable[i][3] > 1) {
+     if(listingsTable[i][2] > 1) {
       html += '<td><p class="clickable" onclick="UpdateChapter(' + i + ',0);">v</p>';
       html += '<p id="storyChp' + i + '">Chp 1</p>';
       html += '<p class="clickable" onclick="UpdateChapter(' + i + ',2);">^</p></td>';
