@@ -99,21 +99,21 @@ function UpdateChapter(listingIndex, chapter) {
   var elem = document.getElementById("storyDown" + listingIndex);
   if(prevChap < 1) {
      elem.className = "unclickable";
-     elem.onclick = 0;
+     elem.onclick = function() {};
   }
    else {
      elem.className = "clickable";
-     elem.onclick = UpdateChapter(listingIndex, prevChap);
+     elem.onclick = function() { UpdateChapter(listingIndex, prevChap) };
   }
    
   elem = document.getElementById("storyUp" + listingIndex);
   if(nextChap > listingsTable[listingIndex][2]) {
      elem.className = "unclickable";
-     elem.onclick = 0;
+     elem.onclick = function() {};
   }
    else {
      elem.className = "clickable";
-     elem.onclick = UpdateChapter(listingIndex, nextChap);
+     elem.onclick = function() { UpdateChapter(listingIndex, nextChap) };
   }
    
   elem = document.getElementById("storyDesc" + listingIndex);
