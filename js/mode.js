@@ -41,7 +41,7 @@ function setUnits() {
   //Handle changing the document here
   
   var elem = document.getElementById("unitsButton");
-  elem.innerText = unitsName + ".";
+  elem.innerText = unitsName;
   
   setCookie("units", unitsName, 365);
 }
