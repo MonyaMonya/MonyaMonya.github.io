@@ -81,9 +81,9 @@ function loadListings() {
    for (var i = 0; i < listingsTable.length; i++) {
      html += '<td><p class="clickable" onclick="GoToStoryPage(\'' + listingsTable[i][1] + '\',1,1);" id="storyName' + i + '">' + listingsTable[i][0] + "</p></td>";
      if(listingsTable[i][2] > 1) {
-      html += '<td><p id="storyDown' + i + '" class="unclickable" onclick="UpdateChapter(' + i + ',0);">v</p>';
+      html += '<td><p id="storyDown' + i + '" class="unclickable" onclick="UpdateChapter(' + i + ',0);"><</p>';
       html += '<p id="storyChp' + i + '">Chp 1</p>';
-      html += '<p id="storyUp' + i + '" class="clickable" onclick="UpdateChapter(' + i + ',2);">^</p></td>';
+      html += '<p id="storyUp' + i + '" class="clickable" onclick="UpdateChapter(' + i + ',2);">></p></td>';
      }
      html += '</tr><tr><td><p id="storyDesc' + i + '">' + listingsTable[i][3][0] + '</p></td></tr>';
     }
