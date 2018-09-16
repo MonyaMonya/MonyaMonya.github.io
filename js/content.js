@@ -118,6 +118,9 @@ function UpdateChapter(listingIndex, chapter) {
    
   elem = document.getElementById("storyDesc" + listingIndex);
   elem.innerText = listingsTable[listingIndex][3][chapter - 1];
+   
+  elem = document.getElementById("storyName" + listingIndex);
+  elem.onclick = function() { GoToStoryPage(listingsTable[listingIndex][1], chapter, 1) };
 }
 
 async function addStoryNavigationBar(story, chapter, page) {
