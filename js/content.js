@@ -85,9 +85,9 @@ function loadListings() {
       html += '<p id="storyChp' + i + '">Chp 1</p>';
       html += '<p class="clickable" onclick="UpdateChapter(' + i + ',2);">^</p></td>';
      }
-     html += '</tr><tr><td><p id="storyDesc' + i + '">DescGoesHere</p></td>';
+     html += '</tr><tr><td><p id="storyDesc' + i + '">DescGoesHere</p></td></tr>';
     }
-    html += '</tr></tbody></table>';
+    html += '</tbody></table>';
       
    return html;
 }
