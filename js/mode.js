@@ -23,9 +23,9 @@ function setMode(transition) {
   
   elem.className = modeName;
   elem = document.getElementById("textUpButton");
-  elem.className = modeName;
+  elem.className = modeName + " right";
   elem = document.getElementById("textDownButton");
-  elem.className = modeName;
+  elem.className = modeName + " left";
   elem = document.getElementById("unitsButton");
   elem.className = modeName;
   
