@@ -74,13 +74,21 @@ function getURLParameter(name) {
 function loadListings() {
    var html = '';
    
-   for (var i = 0; i < listingsTable.length; i++) {
-   html += "<p>" + listingsTable[i][0] + "</p><p>" + listingsTable[i][2] + "</p>";
-     for (var j = 0; j < listingsTable[i][3]; j++) {
-        html += '<p class="clickable" onclick="GoToStoryPage(\'' + listingsTable[i][1] + '\',' + (j + 1) + ',1);">Chp ' + (j + 1) + '</p>';
-     }
+   html += '<table style="width:100%; text-align:center">';
+   html += '<tbody>';
+   html += '<tr>';
    
-   }
+   for (var i = 0; i < listingsTable.length; i++) {
+     html += '<td><p class="clickable" onclick="GoToStoryPage(\'' + listingsTable[i][1] + '\',1,1);" id="storyName' + i + '">' + listingsTable[i][0] + "</p></td>";
+     if(listingsTable[i][3] > 1) {
+      html += '<td><p class="clickable" onclick="UpdateChapter(' + i + ',0);">v</p>';
+      html += '<p id="storyChp' + i + '">Chp 1</p>';
+      html += '<p class="clickable" onclick="UpdateChapter(' + i + ',2);">^</p></td>';
+     }
+     html += '</tr><tr><td><p id="storyDesc' + i + '">DescGoesHere</p></td>';
+    }
+    html += '</tr></tbody></table>';
+      
    return html;
 }
 
