@@ -8,8 +8,8 @@ document.write('\
 	  \
       <div id="header">\
     <button id="modeButton" class="night"></button>\
-    <button id="textUpButton" class="night"></button>\
-    <button id="textDownButton" class="night"></button>\
+    <button id="textUpButton" class="night right"></button>\
+    <button id="textDownButton" class="night left"></button>\
     <button id="unitsButton" class="night"></button>\
     <script>initModeButton();</script>\
     <script>initTextUpButton();</script>\
