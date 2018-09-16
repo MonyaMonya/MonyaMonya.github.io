@@ -96,3 +96,5 @@ canvas.footer {
     width:100%;
     /*position:absolute;*/
 }
+
+a { display: block; }
