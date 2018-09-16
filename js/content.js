@@ -90,11 +90,11 @@ async function addStoryNavigationBar(story, chapter, page) {
            <tbody>\
              <tr>\
                <td style="width:15%"></td>\
-               <td>' + await addStoryNavigationPBlock(story, (parseInt(chapter) - 1), 1) + '<<</p>' + '</td>\
-               <td>' + await addStoryNavigationPBlock(story, chapter, (parseInt(page) - 1)) + '<</p>' + '</td>\
+               <td style="display: flex; justify-content: center">' + await addStoryNavigationPBlock(story, (parseInt(chapter) - 1), 1) + '<<</p>' + '</td>\
+               <td style="display: flex; justify-content: center">' + await addStoryNavigationPBlock(story, chapter, (parseInt(page) - 1)) + '<</p>' + '</td>\
                <td style="width:15%"></td>\
-               <td>' + await addStoryNavigationPBlock(story, chapter, (parseInt(page) + 1)) + '></p>' + '</td>\
-               <td>' + await addStoryNavigationPBlock(story, (parseInt(chapter) + 1), 1) + '>></p>' + '</td>\
+               <td style="display: flex; justify-content: center">' + await addStoryNavigationPBlock(story, chapter, (parseInt(page) + 1)) + '></p>' + '</td>\
+               <td style="display: flex; justify-content: center">' + await addStoryNavigationPBlock(story, (parseInt(chapter) + 1), 1) + '>></p>' + '</td>\
                <td style="width:15%"></td>\
              </tr>\
            </tbody>\
