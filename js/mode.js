@@ -122,7 +122,7 @@ function initTextUpButton() {
   var elem = document.getElementById("textUpButton");
   elem.style.top = "0px";
   elem.style.right = "45px";
-  elem.innerText = "^";
+  elem.innerText = "f↑";
   elem.className = modeName;
   elem.onclick = textSizeUpButton;
 }
@@ -131,7 +131,7 @@ function initTextDownButton() {
   var elem = document.getElementById("textDownButton");
   elem.style.top = "0px";
   elem.style.right = "85px";
-  elem.innerText = "v";
+  elem.innerText = "f↓";
   elem.className = modeName;
   elem.onclick = textSizeDownButton;
 }
