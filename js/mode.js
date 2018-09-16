@@ -123,7 +123,7 @@ function initTextUpButton() {
   elem.style.top = "0px";
   elem.style.right = "45px";
   elem.innerText = "f▲";
-  elem.className = modeName;
+  elem.className = modeName + " right";
   elem.onclick = textSizeUpButton;
 }
 
@@ -132,7 +132,7 @@ function initTextDownButton() {
   elem.style.top = "0px";
   elem.style.right = "85px";
   elem.innerText = "f▼";
-  elem.className = modeName;
+  elem.className = modeName + " left";
   elem.onclick = textSizeDownButton;
 }
 
