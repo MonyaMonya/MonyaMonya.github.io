@@ -81,15 +81,43 @@ function loadListings() {
    for (var i = 0; i < listingsTable.length; i++) {
      html += '<td><p class="clickable" onclick="GoToStoryPage(\'' + listingsTable[i][1] + '\',1,1);" id="storyName' + i + '">' + listingsTable[i][0] + "</p></td>";
      if(listingsTable[i][2] > 1) {
-      html += '<td><p class="clickable" onclick="UpdateChapter(' + i + ',0);">v</p>';
+      html += '<td><p id="storyDown' + i + '" class="unclickable" onclick="UpdateChapter(' + i + ',0);">v</p>';
       html += '<p id="storyChp' + i + '">Chp 1</p>';
-      html += '<p class="clickable" onclick="UpdateChapter(' + i + ',2);">^</p></td>';
+      html += '<p id="storyUp' + i + '" class="clickable" onclick="UpdateChapter(' + i + ',2);">^</p></td>';
      }
-     html += '</tr><tr><td><p id="storyDesc' + i + '">DescGoesHere</p></td></tr>';
+     html += '</tr><tr><td><p id="storyDesc' + i + '">' + [listingIndex][3][0] + '</p></td></tr>';
     }
     html += '</tbody></table>';
       
    return html;
+}
+
+function UpdateChapter(listingIndex, chapter) {
+  var prevChap = chapter - 1;
+  var nextChap = chapter + 1;
+  
+  var elem = document.getElementById("storyDown" + listingIndex);
+  if(prevChap < 1) {
+     elem.className = "unclickable";
+     elem.onclick = 0;
+  }
+   else {
+     elem.className = "clickable";
+     elem.onclick = UpdateChapter(listingIndex, prevChap);
+  }
+   
+  elem = document.getElementById("storyUp" + listingIndex);
+  if(nextChap > listingsTable[listingIndex][2]) {
+     elem.className = "unclickable";
+     elem.onclick = 0;
+  }
+   else {
+     elem.className = "clickable";
+     elem.onclick = UpdateChapter(listingIndex, nextChap);
+  }
+   
+  elem = document.getElementById("storyDesc" + listingIndex);
+  elem.innerText = listingsTable[listingIndex][3][chapter];
 }
 
 async function addStoryNavigationBar(story, chapter, page) {
