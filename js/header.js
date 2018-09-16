@@ -23,8 +23,8 @@ document.write('\
     <table style="width:100%; text-align:center">\
       <tr>\
         <td style="width:50%"></td>\
-        <td><p class="clickable" onclick="GoToPage(\'listing\');">Stories</p></td>\
-        <td><p class="clickable" onclick="GoToPage(\'about\');">About</p></td>\
+        <td className="horizontalJustify"><p class="clickable" onclick="GoToPage(\'listing\');">Stories</p></td>\
+        <td className="horizontalJustify"><p class="clickable" onclick="GoToPage(\'about\');">About</p></td>\
       </tr>\
     </table>\
       </div><!-- #header -->\
