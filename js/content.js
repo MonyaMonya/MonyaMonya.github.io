@@ -7,7 +7,7 @@ function UpdateContent() {
    //Fill it in here
    var innerHtml = '';
    if(pageName == "about") {
-      innerHtml = '<p>Testing one two Breen</p>';
+      innerHtml = '<p>Just a simple archive site for a simple Monya. The Monya is a solitary species that is drawn to all things gentle, sad and yuri. It will fashion its nest out of these things like a bird.</p><p>Do not be afraid of the Monya. It will not bite.</p>';
    }
    else if(pageName == "listing") {
       innerHtml = loadListings();
