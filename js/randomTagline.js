@@ -17,7 +17,14 @@ var randomTaglines = [
   "Sleeping in oversized clothes",
   "Please stop",
   "I'm sorry I hurt you",
-  "Yesterday, today, tomorrow"
+  "Yesterday, today, tomorrow",
+  "Pitch-shifted smut",
+  "Breakfast for two",
+  "At the end of the world",
+  "Small fingers interlaced",
+  "Light from the dying moon",
+  "Goodbye my love",
+  "I'm glad we met"
 ];
 
 function getRandomTagline() {
