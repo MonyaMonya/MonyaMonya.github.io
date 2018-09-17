@@ -76,10 +76,9 @@ function loadListings() {
    
    html += '<table style="width:100%">';
    html += '<tbody>';
-   html += '<tr style="white-space: nowrap">';
    
    for (var i = 0; i < listingsTable.length; i++) {
-     html += '<td><p class="clickable noVMargin" onclick="GoToStoryPage(\'' + listingsTable[i][1] + '\',1,1);" id="storyName' + i + '">' + listingsTable[i][0] + "</p></td>";
+     html += '<tr style="white-space: nowrap"><td><p class="clickable noVMargin" onclick="GoToStoryPage(\'' + listingsTable[i][1] + '\',1,1);" id="storyName' + i + '">' + listingsTable[i][0] + "</p></td>";
      if(listingsTable[i][2] > 1) {
       html += '<td><p id="storyDown' + i + '" class="unclickable noVMargin" onclick="UpdateChapter(' + i + ',0);"><</p></td>';
       html += '<td><p id="storyChp' + i + '" class="noVMargin">Chp 1</p></td>';
