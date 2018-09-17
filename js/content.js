@@ -78,17 +78,17 @@ function loadListings() {
    html += '<tbody>';
    
    for (var i = 0; i < listingsTable.length; i++) {
-     html += '<tr style="white-space: nowrap"><td><p class="clickable noVMargin" onclick="GoToStoryPage(\'' + listingsTable[i][1] + '\',1,1);" id="storyName' + i + '">' + listingsTable[i][0] + "</p></td>";
+     html += '<tr style="white-space: nowrap; margin-right: 80px"><td><p style="text-decoration: underline" class="clickable noVMargin" onclick="GoToStoryPage(\'' + listingsTable[i][1] + '\',1,1);" id="storyName' + i + '">' + listingsTable[i][0] + "</p></td>";
      if(listingsTable[i][2] > 1) {
       html += '<td><p id="storyDown' + i + '" class="unclickable noVMargin" onclick="UpdateChapter(' + i + ',0);"><</p></td>';
-      html += '<td><p id="storyChp' + i + '" class="noVMargin">Chp 1</p></td>';
+      html += '<td><p id="storyChp' + i + '" class="unclickable noVMargin">Chp 1</p></td>';
       html += '<td><p id="storyUp' + i + '" class="clickable noVMargin" onclick="UpdateChapter(' + i + ',2);">></p></td>';
       html += '<td style="width:100%"></td>';
      }
      else {
       html += '<td style="width:100%" colspan="4"></td>';
      }
-     html += '</tr><tr><td colspan="5"><p class="hMargin20" id="storyDesc' + i + '">' + listingsTable[i][3][0] + '</p></td></tr>';
+     html += '</tr><tr><td colspan="5"><p class="hMargin20 unclickable" id="storyDesc' + i + '">' + listingsTable[i][3][0] + '</p></td></tr>';
     }
     html += '</tbody></table>';
       
@@ -101,21 +101,21 @@ function UpdateChapter(listingIndex, chapter) {
   
   var elem = document.getElementById("storyDown" + listingIndex);
   if(prevChap < 1) {
-     elem.className = "unclickable";
+     elem.className = "unclickable noVMargin";
      elem.onclick = function() {};
   }
    else {
-     elem.className = "clickable";
+     elem.className = "clickable noVMargin";
      elem.onclick = function() { UpdateChapter(listingIndex, prevChap) };
   }
    
   elem = document.getElementById("storyUp" + listingIndex);
   if(nextChap > listingsTable[listingIndex][2]) {
-     elem.className = "unclickable";
+     elem.className = "unclickable noVMargin";
      elem.onclick = function() {};
   }
    else {
-     elem.className = "clickable";
+     elem.className = "clickable noVMargin";
      elem.onclick = function() { UpdateChapter(listingIndex, nextChap) };
   }
    
