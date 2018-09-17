@@ -74,9 +74,9 @@ function getURLParameter(name) {
 function loadListings() {
    var html = '';
    
-   html += '<table style="width:100%; white-space: nowrap">';
+   html += '<table style="width:100%">';
    html += '<tbody>';
-   html += '<tr>';
+   html += '<tr style="white-space: nowrap">';
    
    for (var i = 0; i < listingsTable.length; i++) {
      html += '<td><p class="clickable noVMargin" onclick="GoToStoryPage(\'' + listingsTable[i][1] + '\',1,1);" id="storyName' + i + '">' + listingsTable[i][0] + "</p></td>";
