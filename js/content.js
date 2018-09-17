@@ -84,9 +84,12 @@ function loadListings() {
       html += '<td><p id="storyDown' + i + '" class="unclickable noVMargin" onclick="UpdateChapter(' + i + ',0);"><</p></td>';
       html += '<td><p id="storyChp' + i + '" class="noVMargin">Chp 1</p></td>';
       html += '<td><p id="storyUp' + i + '" class="clickable noVMargin" onclick="UpdateChapter(' + i + ',2);">></p></td>';
+      html += '<td style="width:100%"></td>';
      }
-     html += '<td style="width:100%" colspan="0"></td>';
-     html += '</tr><tr><td colspan="0"><p class="hMargin20" id="storyDesc' + i + '">' + listingsTable[i][3][0] + '</p></td></tr>';
+     else {
+      html += '<td style="width:100%" colspan="4"></td>';
+     }
+     html += '</tr><tr><td colspan="5"><p class="hMargin20" id="storyDesc' + i + '">' + listingsTable[i][3][0] + '</p></td></tr>';
     }
     html += '</tbody></table>';
       
