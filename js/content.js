@@ -80,7 +80,7 @@ function loadListings() {
    for (var i = 0; i < listingsTable.length; i++) {
      html += '<tr style="white-space: nowrap; margin-right: 80px"><td><p style="text-decoration: underline" class="clickable noVMargin" onclick="GoToStoryPage(\'' + listingsTable[i][1] + '\',1,1);" id="storyName' + i + '">' + listingsTable[i][0] + "</p></td>";
      if(listingsTable[i][2] > 1) {
-      html += '<td><p id="storyDown' + i + '" class="unclickable noVMargin" onclick="UpdateChapter(' + i + ',0);"><</p></td>';
+      html += '<td><p id="storyDown' + i + '" class="unclickable noVMargin"><</p></td>';
       html += '<td><p id="storyChp' + i + '" class="unclickable noVMargin">Chp 1</p></td>';
       html += '<td><p id="storyUp' + i + '" class="clickable noVMargin" onclick="UpdateChapter(' + i + ',2);">></p></td>';
       html += '<td style="width:100%"></td>';
