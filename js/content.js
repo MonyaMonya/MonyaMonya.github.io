@@ -74,7 +74,7 @@ function getURLParameter(name) {
 function loadListings() {
    var html = '';
    
-   html += '<table style="width:100%; text-align:center">';
+   html += '<table style="width:100%">';
    html += '<tbody>';
    html += '<tr>';
    
