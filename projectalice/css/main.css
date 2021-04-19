@@ -1,0 +1,139 @@
+html,
+body {
+    margin:0;
+    padding:0;
+    font-family: Verdana;
+    font-size: 36px;
+    background-color: #000;
+	color: lightgray;
+}
+
+.alice-container {
+	background-color: #111;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.alice-right {
+	text-align: right;
+}
+
+.alice-center {
+	text-align: center;
+}
+
+.alice-button-left {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	font-size: 20px;
+}
+
+.alice-button-right {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 20px;
+}
+
+.alice-code {
+	font-size: 13px;
+	color: gray;
+}
+
+.alice-mid-row {
+	height:40px;
+}
+
+.alice-mid-col {
+	background-color: white;
+	height: 2px;
+}
+
+.alice-attribute {
+	font-size: 24px;
+}
+
+.alice-attribute-desc {
+	color: lightsteelblue;
+}
+
+.inlinediv {
+   display: inline-block;
+}
+
+.rarity-common {
+	color: lightgray;
+}
+
+.rarity-uncommon {
+	color: green;
+}
+
+.rarity-rare {
+	color: royalblue;
+}
+
+.rarity-epic {
+	color: purple;
+}
+
+.color-aqua {
+	color: #8ff;
+}
+
+.color-pink {
+	color: #f0f;
+}
+
+.imgtip span 
+  {display: none; position: absolute; bottom: 0; left: 0; right: 0; background: #333; color: #fff; }
+.imgtip:hover span {display: block; }
+
+
+.image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+.image .tooltiptext2 {
+  visibility: hidden;
+  width: 60%;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -4px;
+  left: 50px;
+  font-size: 20px;
+  font-family: Arial;
+
+/* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.image .tooltiptext2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.image:hover .tooltiptext2 {
+    visibility: visible;
+    opacity: 1;
+}
+
+#aliceUrl {
+	display: none;
+}
