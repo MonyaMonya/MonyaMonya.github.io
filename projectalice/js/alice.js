@@ -350,6 +350,7 @@ function createAlice(rand) {
 	  
 	  //Attr. 5
 	  attribute5type = rarities.EPIC;
+      attributelist = attributeepicnames;
 	  do {
 	     attribute5id = getRandRange(m, attributelist.length);
 	  } while ((attribute1type == attribute5type && attribute1id == attribute5id) ||
