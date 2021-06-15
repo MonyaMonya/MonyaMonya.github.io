@@ -1,4 +1,4 @@
-**Javascript File Summaries:**
+###### Javascript File Summaries:
 
 alice.js - Contains the code that holds all the information contained in a single Alice, as well as setting it up from a random seed when you first load it.
 aliceconstants.js - This is where all the different variants of possible Alice properties are held. Names, colors, abilities, etc.
@@ -7,20 +7,20 @@ mersenne-twister.js - Copy/pasted code for a commonly-used pseudo-random number 
 
 ------------------
 
-**General Concept:**
+###### General Concept:
 The general concept behind a gacha-style randomizer is this: each Instance will have an associated 'seed' value that will be fed into a random number generator. This seeded RNG will then go on to output the exact same sequence of 'randomized' values every time it uses that seed, so you map those randomized values to various attributes to create a unique Instance. That way, sharing seed values means that multiple people can view the exact same Instance.
 
 Side note: just about any random number generator will be fine if you don't wanna get too picky about your values. I chose the mersenne twister because I like the name : )
 
 ------------------
 
-**As Applied To Alice:**
+###### As Applied To Alice:
 For an Alice, I thought about what kind of attributes I wanted, and the list I came up with was:
--Name
--Type (bean/koi/boot/storb)
--Abilities
--Size
--Color scheme
+- Name
+- Type (bean/koi/boot/storb)
+- Abilities
+- Size
+- Color scheme
 and on top of that I added a Rarity that would modify some of the other attributes. So I'll just go down the list for how I went about developing some of these, starting from less complex to more complex.
 
 **Type & Abilities:**
@@ -39,7 +39,7 @@ So essentially there could be 5 total places a name could be randomized. Dependi
 
 ------------------
 
-**Development Process:**
+###### Development Process:
 Overall this was made in around 2 weeks, although in terms of actual time I took probably 2 slow days of low effort, 1 day of medium effort and 1.5 days of a final desperate sprint to get in as much as I could. I think I took like a week break with no progress, lol.
 
 I started off writing in C# since it's my fastest & most familiar language. I made a basic Alice object with minimal attributes & output everything in text. Once I had the concept down, I moved it over into HTML so I could host it on Github & share it as a website.
