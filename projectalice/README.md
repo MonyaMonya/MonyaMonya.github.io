@@ -16,11 +16,13 @@ Side note: just about any random number generator will be fine if you don't wann
 
 ###### As Applied To Alice:
 For an Alice, I thought about what kind of attributes I wanted, and the list I came up with was:
+
 - Name
 - Type (bean/koi/boot/storb)
 - Abilities
 - Size
 - Color scheme
+
 and on top of that I added a Rarity that would modify some of the other attributes. So I'll just go down the list for how I went about developing some of these, starting from less complex to more complex.
 
 **Type & Abilities:**
